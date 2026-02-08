@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever Us ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #ff6f91, #ff9a9e);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.18);
+    border-radius: 18px;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 360px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 12px;
+}
+
+.buttons {
+    position: relative;
+    height: 120px;
+}
+
+button {
+    background: #ff2e63;
+    border: none;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#noBtn {
+    top: 0;
+    background: #6c757d;
+}
+
+#yesBtn {
+    top: 60px;
+}
+
+footer {
+    margin: 30px 0 15px;
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="/Love_Website/mixkit-my-little-prince-815.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+    <h1>Forever Us ❤️</h1>
+    <div class="subtitle">From my heart… only for you</div>
+
+    <div class="card">
+          <p>
+            Hey my love,<br><br>
+            I know today morning was not easy…  
+            I know I hurt you, and I am really sorry 😔  
+            But one thing I want you to know is —
+            <b>I never stopped loving you.</b>
+        </p>
+    </div>
+
+    <div class="card">
+        <p>
+            Karry...
+            You are my peace,  
+            my happiness,  
+            my favorite person 🌍<br><br>
+            Even when you’re angry…  
+            my heart still chooses **YOU**.
+        </p>
+    </div>
+
+    <div class="card">S
+        <p><b>Our Memories 💕</b></p>
+        <img src="/Love_Website/us1.jpeg" alt="Us">
+        <img src="/Love_Website/us2.jpeg" alt="Us">
+    </div>
+
+    <div class="card">
+        <p>
+            So on this Propose Day… 💍<br>
+            answer honestly ❤️<br>
+            Do you Love Me...!
+        </p>
+
+        <div class="buttons">
+            <button id="noBtn" onclick="noClick()">
+                Not Now 😒
+            </button>
+
+            <button id="yesBtn" onclick="yesClick()">
+                Yes, Always ❤️
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        Made with love 💖 by the one who annoys you but loves you endlessly
+    </footer>
+
+</div>
+
+<script>
+/* Music on first tap (mobile rule) */
+document.body.addEventListener('click', () => {
+    document.getElementById("bgMusic").play();
+}, { once: true });
+
+/* Mischievous No Button */
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("touchstart", moveButton);
+
+function moveButton() {
+    const x = Math.random() * 60;
+    const y = Math.random() * 60;
+    noBtn.style.left = x + "%";
+    noBtn.style.top = y + "px";
+}
+
+function noClick() {
+    alert("Hey Karry 😠💔\nYou are NOT allowed to choose this!\nMy heart rejected your choice 🥺❤️");
+}
+
+/* Yes Button */
+function yesClick() {
+    alert("YAYYYY 😍💖\nI knew it Karry!\nThank you for choosing us ❤️\nI love you forever & always 😘 My Dear Karry");
+}
+
+/* Floating Hearts */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 15) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+}, 500);
+</script>
+
+</body>
+</html>
